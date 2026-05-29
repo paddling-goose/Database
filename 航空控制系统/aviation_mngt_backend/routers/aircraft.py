@@ -2,9 +2,9 @@
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
-from config.db_conf import get_db
-from schemas.schemas import AircraftCreate, AircraftOut
-import crud.aircraft as crud
+from 航空控制系统.aviation_mngt_backend.config.db_conf import get_db
+from 航空控制系统.aviation_mngt_backend.schemas.schemas import AircraftCreate, AircraftOut
+import 航空控制系统.aviation_mngt_backend.crud.aircraft as crud
 
 router = APIRouter(prefix="/aircraft", tags=["飞机"])
 

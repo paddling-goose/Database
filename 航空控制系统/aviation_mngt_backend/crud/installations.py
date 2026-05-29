@@ -3,8 +3,8 @@
 from datetime import datetime
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
-from models.aviation_mngt import InstallationRecord
-from schemas.schemas import InstallationCreate, RemovalUpdate
+from 航空控制系统.aviation_mngt_backend.models.aviation_mngt import InstallationRecord
+from 航空控制系统.aviation_mngt_backend.schemas.schemas import InstallationCreate, RemovalUpdate
 
 
 async def get_all(db: AsyncSession, active_only: bool = False) -> list[InstallationRecord]:

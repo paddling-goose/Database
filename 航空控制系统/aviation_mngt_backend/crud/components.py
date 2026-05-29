@@ -2,8 +2,8 @@
 
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
-from models.aviation_mngt import Component, ComponentModel
-from schemas.schemas import ComponentCreate, ComponentModelCreate
+from 航空控制系统.aviation_mngt_backend.models.aviation_mngt import Component, ComponentModel
+from 航空控制系统.aviation_mngt_backend.schemas.schemas import ComponentCreate, ComponentModelCreate
 
 
 # ===== 部件型号 =====

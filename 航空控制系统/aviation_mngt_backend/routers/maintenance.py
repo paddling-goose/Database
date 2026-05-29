@@ -2,10 +2,10 @@
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
-from config.db_conf import get_db
-from schemas.schemas import MaintenanceCreate, MaintenanceClose, MaintenanceOut
-import crud.maintenance as crud
-import crud.components as comp_crud
+from 航空控制系统.aviation_mngt_backend.config.db_conf import get_db
+from 航空控制系统.aviation_mngt_backend.schemas.schemas import MaintenanceCreate, MaintenanceClose, MaintenanceOut
+import 航空控制系统.aviation_mngt_backend.crud.maintenance as crud
+import 航空控制系统.aviation_mngt_backend.crud.components as comp_crud
 
 router = APIRouter(prefix="/maintenance", tags=["维修"])
 

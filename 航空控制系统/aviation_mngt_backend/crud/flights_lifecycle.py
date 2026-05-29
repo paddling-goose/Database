@@ -2,11 +2,11 @@
 
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, text
-from models.aviation_mngt import (
+from 航空控制系统.aviation_mngt_backend.models.aviation_mngt import (
     FlightLog, Component, InstallationRecord,
     MaintenanceRecord, ScrapOrRetirementRecord,
 )
-from schemas.schemas import FlightLogCreate
+from 航空控制系统.aviation_mngt_backend.schemas.schemas import FlightLogCreate
 
 
 # ===== 飞行日志 =====

@@ -2,8 +2,8 @@
 
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
-from models.aviation_mngt import Aircraft
-from schemas.schemas import AircraftCreate
+from 航空控制系统.aviation_mngt_backend.models.aviation_mngt import Aircraft
+from 航空控制系统.aviation_mngt_backend.schemas.schemas import AircraftCreate
 
 
 async def get_all(db: AsyncSession) -> list[Aircraft]:

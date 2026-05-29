@@ -2,7 +2,8 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers import aircraft, components, installations, maintenance, retirement, flights_lifecycle
+from 航空控制系统.aviation_mngt_backend.routers import retirement
+from 航空控制系统.aviation_mngt_backend.routers import aircraft, components, flights_lifecycle, installations, maintenance
 
 app = FastAPI(
     title="航空部件生命周期与维修管理系统",
