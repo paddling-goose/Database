@@ -2,8 +2,9 @@
 
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
-from models.aviation_mngt import MaintenanceRecord
+from models.aviation_mngt import MaintenanceRecord,Component
 from schemas.schemas import MaintenanceCreate, MaintenanceClose
+
 
 
 async def get_all(
@@ -24,6 +25,11 @@ async def create(db: AsyncSession, body: MaintenanceCreate) -> MaintenanceRecord
     record = MaintenanceRecord(**body.model_dump())
     db.add(record)
     await db.flush()
+
+    comp = await db.get(Component, body.component_id)
+    if comp and comp.status not in ("retired", "scrapped"):
+        comp.status = "under_maintenance"
+
     await db.refresh(record)
     return record
 
