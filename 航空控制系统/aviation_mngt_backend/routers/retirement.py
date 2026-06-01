@@ -2,11 +2,11 @@
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
-from 航空控制系统.aviation_mngt_backend.config.db_conf import get_db
-from 航空控制系统.aviation_mngt_backend.schemas.schemas import RetireCreate, RetireOut
-import 航空控制系统.aviation_mngt_backend.crud.retirement as crud
-import 航空控制系统.aviation_mngt_backend.crud.components as comp_crud
-import 航空控制系统.aviation_mngt_backend.crud.installations as install_crud
+from config.db_conf import get_db
+from schemas.schemas import RetireCreate, RetireOut
+import crud.retirement as crud
+import crud.components as comp_crud
+import crud.installations as install_crud
 
 router = APIRouter(prefix="/retirement", tags=["退役"])
 

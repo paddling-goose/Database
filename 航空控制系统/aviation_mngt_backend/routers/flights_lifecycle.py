@@ -2,9 +2,9 @@
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
-from 航空控制系统.aviation_mngt_backend.config.db_conf import get_db
-from 航空控制系统.aviation_mngt_backend.schemas.schemas import FlightLogCreate, FlightLogOut, LifecycleOut, ComponentOut, InstallationOut, MaintenanceOut, RetireOut
-import 航空控制系统.aviation_mngt_backend.crud.flights_lifecycle as crud
+from config.db_conf import get_db
+from schemas.schemas import FlightLogCreate, FlightLogOut, LifecycleOut, ComponentOut, InstallationOut, MaintenanceOut, RetireOut
+import crud.flights_lifecycle as crud
 
 router = APIRouter(tags=["飞行与追溯"])
 

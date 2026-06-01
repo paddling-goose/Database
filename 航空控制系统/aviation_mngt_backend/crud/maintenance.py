@@ -2,8 +2,8 @@
 
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
-from 航空控制系统.aviation_mngt_backend.models.aviation_mngt import MaintenanceRecord
-from 航空控制系统.aviation_mngt_backend.schemas.schemas import MaintenanceCreate, MaintenanceClose
+from models.aviation_mngt import MaintenanceRecord
+from schemas.schemas import MaintenanceCreate, MaintenanceClose
 
 
 async def get_all(
