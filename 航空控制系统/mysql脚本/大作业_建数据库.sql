@@ -548,3 +548,27 @@ JOIN ComponentModel    cm  ON c.model_id       = cm.model_id;
 -- ============================================================
 
 SELECT '数据库结构初始化完成。' AS 提示;
+
+-- 增加trigger并手动修改原有的一些数据
+USE aviation_mngt;
+
+DROP TRIGGER IF EXISTS trg_after_maintenance_insert;
+
+DELIMITER $$
+CREATE TRIGGER trg_after_maintenance_insert
+AFTER INSERT ON MaintenanceRecord
+FOR EACH ROW
+BEGIN
+    UPDATE Component
+    SET status = 'under_maintenance', updated_at = CURRENT_TIMESTAMP
+    WHERE component_id = NEW.component_id
+      AND status NOT IN ('retired', 'scrapped');
+END$$
+DELIMITER ;
+
+
+UPDATE Component c
+JOIN MaintenanceRecord m ON c.component_id = m.component_id
+SET c.status = 'under_maintenance'
+WHERE m.end_time IS NULL
+  AND c.status NOT IN ('retired', 'scrapped');
